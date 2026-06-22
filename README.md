@@ -15,6 +15,16 @@ It is designed around two requirements:
 - Opaque cursor: the API returns one cursor token per page so the client does not need to manage raw sort fields.
 - Snapshot timestamp: every browsing session keeps a fixed cutoff so the user does not see duplicates or miss rows while data changes.
 
+## Tech Stack Chosen
+
+- Node.js: simple runtime for the API and seed script.
+- Express: lightweight HTTP framework for the product browsing API.
+- PostgreSQL: stores the data and supports the composite indexes needed for fast pagination.
+- React + Vite: minimal frontend stack for the optional browsing UI and fast local development.
+- pg: PostgreSQL driver used by the backend to query the database.
+- Render: deployment target for the backend and frontend.
+- Neon: managed PostgreSQL provider used for the hosted database.
+
 ## Project Structure
 
 - `backend/` contains the API, schema seed script, and PostgreSQL connection.
